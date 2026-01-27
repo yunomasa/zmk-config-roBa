@@ -75,7 +75,7 @@
                 <&macro_tap>,
                 <&sl 4>;
 
-            label = "MXP_EXIT_AML";
+            label = "MKP_EXIT_AML";
         };
     };
 
