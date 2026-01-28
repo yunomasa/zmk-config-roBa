@@ -90,6 +90,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
         scroll_up_down: behavior_sensor_rotate_mouuse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -110,7 +111,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mkp MB1  &lt 2 SPACE  &lt_to_layer_0 3 LC(SPACE)      &kp BACKSPACE          &lt 1 ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         FUNCTION {
