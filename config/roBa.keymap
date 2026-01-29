@@ -128,7 +128,8 @@
                 <&mkp LCLK>,
                 <&macro_release>,
                 <&kp LSHFT>,
-                <&macro_wait_time 50>;
+                <&macro_wait_time 50>,
+                <&kp BSPC>;
         };
 
         call_siri: call_siri {
@@ -194,7 +195,7 @@
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &com_all_copy                               &alfred_command  &kp LS(LA(C_VOL_DN))  &kp LC(UP_ARROW)    &kp LS(LA(C_VOL_UP))  &call_siri
 &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END        &trans      &kp LG(LA(ESC))  &kp LG(LA(C))    &kp LC(LEFT_ARROW)    &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)   &kp LS(LG(N5))
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans         &trans      &trans           &com_all_del     &com_select_del       &trans              &kp LS(LG(V))         &kp LS(LG(N4))
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans         &trans      &trans           &com_all_del     &shift_lclick         &trans              &kp LS(LG(V))         &kp LS(LG(N4))
 &trans          &trans                  &trans          &trans                   &trans         &trans      &trans           &trans                                                                           &kp LS(LG(N3))
             >;
 
