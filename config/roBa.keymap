@@ -120,7 +120,8 @@
                 <&macro_release>,
                 <&mkp LCLK>,
                 <&macro_release>,
-                <&kp LSHFT>;
+                <&kp LSHFT>,
+                <&macro_wait_time 100>;
         };
 
         call_siri: call_siri {
