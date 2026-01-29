@@ -110,7 +110,7 @@
         com_select_del: com_select_del {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&shift_lclick>, <&macro_wait_time 50>, <&kp BACKSPACE>;
+            bindings = <&shift_lclick>, <&macro_wait_time 10>, <&kp DELETE>;
 
             label = "COM_SELECT_DEL";
         };
