@@ -86,6 +86,27 @@
             bindings = <&kp RIGHT_COMMAND &kp RIGHT_COMMAND>;
             label = "ALFRED_COMMAND";
         };
+
+        com_all_copy: com_all_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(A) &kp LG(C)>;
+            label = "COM_ALL_COPY";
+        };
+
+        com_all_del: com_all_del {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(A) &kp BACKSPACE>;
+            label = "COM_ALL_DEL";
+        };
+
+        com_select_del: com_select_del {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "COM_SELECT_DEL";
+        };
     };
 
     behaviors {
@@ -113,7 +134,7 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &lt 5 E       &kp R     &kp T                                                       &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F     &kp G        &kp LS(LG(S))                   &kp EQUAL      &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
+&kp A             &kp S         &kp D         &kp F     &kp G        &kp LS(LG(S))                   &kp LC(MINUS)  &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V     &kp B        &lt 4 TAB                       &lt 6 ESC      &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mkp MB1  &lt 2 SPACE  &lt_to_layer_0 3 LC(SPACE)      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
@@ -142,7 +163,7 @@
         ARROW {
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &alfred_command  &kp LS(LA(C_VOL_DN))  &kp LC(UP_ARROW)    &kp LS(LA(C_VOL_UP))  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans           &kp LC(LEFT_ARROW)    &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)   &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &kp LG(LA(C))    &kp LC(LEFT_ARROW)    &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)   &trans
 &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans           &trans                &trans              &trans                &trans
 &trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                                                           &trans
             >;
