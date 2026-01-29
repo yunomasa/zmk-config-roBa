@@ -83,28 +83,35 @@
         alfred_command: alfred_command {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_COMMAND &kp RIGHT_COMMAND>;
+            bindings =
+                <&kp RIGHT_COMMAND>,
+                <&macro_wait_time 10>,
+                <&kp RIGHT_COMMAND>;
+
             label = "ALFRED_COMMAND";
         };
 
         com_all_copy: com_all_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(A) &kp LG(C)>;
+            bindings = <&kp LG(A)>, <&macro_wait_time 10>, <&kp LG(C)>;
+
             label = "COM_ALL_COPY";
         };
 
         com_all_del: com_all_del {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(A) &kp BACKSPACE>;
+            bindings = <&kp LG(A)>, <&macro_wait_time 10>, <&kp BACKSPACE>;
+
             label = "COM_ALL_DEL";
         };
 
         com_select_del: com_select_del {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&shift_lclick &kp BACKSPACE>;
+            bindings = <&shift_lclick>, <&macro_wait_time 50>, <&kp BACKSPACE>;
+
             label = "COM_SELECT_DEL";
         };
 
@@ -121,7 +128,7 @@
                 <&mkp LCLK>,
                 <&macro_release>,
                 <&kp LSHFT>,
-                <&macro_wait_time 100>;
+                <&macro_wait_time 50>;
         };
 
         call_siri: call_siri {
