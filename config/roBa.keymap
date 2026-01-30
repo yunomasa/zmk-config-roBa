@@ -176,12 +176,19 @@
             tap-ms = <20>;
         };
 
+        hm_layer: hold_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>; // 長押し判定のミリ秒
+            bindings = <&mo>, <&ctrl_space>; // 長押しでレイヤー(mo), タップでマクロ
+        };
+
         td_layer: tap_dance_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ctrl_space>, <&mo 3>;
- // 1タップでマクロ、長押しでレイヤー1
+            bindings = <&ctrl_space>, <&mo 3>; // 1タップでマクロ、長押しでレイヤー3
         };
     };
 
