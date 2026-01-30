@@ -151,7 +151,8 @@
                 <&kp SPACE>,
                 <&macro_wait_time 1>,
                 <&macro_release>,
-                <&kp LEFT_CONTROL>;
+                <&kp LEFT_CONTROL>,
+                <&macro_wait_time 100>;
 
             label = "CTRL_SPACE";
         };
