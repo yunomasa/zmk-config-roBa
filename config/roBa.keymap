@@ -180,7 +180,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&my_macro>, <&mo 1>; // 1タップでマクロ、長押しでレイヤー1
+            bindings = <&ctrl_space>, <&mo 1>; // 1タップでマクロ、長押しでレイヤー1
         };
     };
 
