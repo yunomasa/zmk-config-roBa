@@ -180,7 +180,8 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ctrl_space>, <&mo 1>; // 1タップでマクロ、長押しでレイヤー1
+            bindings = <&ctrl_space>, <&mo 3>;
+ // 1タップでマクロ、長押しでレイヤー1
         };
     };
 
@@ -192,7 +193,7 @@
 &kp Q             &kp W         &lt 5 E                     &kp R     &kp T                                          &kp Y        &kp U  &lt 5 I    &kp O         &kp P
 &kp A             &kp S         &kp D                       &kp F     &kp G        &kp LS(LG(S))      &kp MINUS      &kp H        &kp J  &kp K      &kp L         &lt 3 SEMICOLON
 &mt LEFT_SHIFT Z  &lt 4 X       &kp C                       &kp V     &kp B        &lt 4 TAB          &lt 6 ESC      &kp N        &kp M  &kp COMMA  &lt 6 PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_ALT  &mt LEFT_COMMAND LC(SPACE)  &mkp MB1  &lt 2 SPACE  &ctrl_space        &kp BACKSPACE  &lt 1 ENTER                                  &kp DEL
+&kp LCTRL         &kp LEFT_ALT  &mt LEFT_COMMAND LC(SPACE)  &mkp MB1  &lt 2 SPACE  &td_layer          &kp BACKSPACE  &lt 1 ENTER                                  &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
