@@ -143,13 +143,13 @@
             bindings =
                 <&macro_press>,
                 <&kp LEFT_CONTROL>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 100>,
                 <&macro_press>,
                 <&kp SPACE>,
                 <&macro_wait_time 10>,
                 <&macro_release>,
                 <&kp SPACE>,
-                <&macro_wait_time 10>,
+                <&macro_wait_time 1>,
                 <&macro_release>,
                 <&kp LEFT_CONTROL>;
 
