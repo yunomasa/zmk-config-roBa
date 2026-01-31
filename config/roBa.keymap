@@ -5,7 +5,6 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500 // 数値を大きくすると速くなる
-aa
 
 &mt {
     flavor = "balanced";
