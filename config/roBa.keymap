@@ -204,7 +204,7 @@
             bindings = <
 &kp Q             &kp W         &lt 5 E           &kp R     &kp T                                          &kp Y        &kp U  &lt 5 I    &kp O         &kp P
 &lt 1 A           &kp S         &kp D             &kp F     &kp G        &kp LS(LG(S))      &kp MINUS      &kp H        &kp J  &kp K      &kp L         &lt 3 SEMICOLON
-&mt LEFT_SHIFT Z  &lt 4 X       &kp C             &kp V     &kp B        &lt 4 TAB          &lt 6 ESC      &kp N        &kp M  &kp COMMA  &lt 6 PERIOD  &mt RIGHT_SHIFT SLASH
+&mt LEFT_SHIFT Z  &lt 4 X       &kp C             &kp V     &kp B        &lt 6 TAB          &lt 4 ESC      &kp N        &kp M  &kp COMMA  &lt 6 PERIOD  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_ALT  &kp LEFT_COMMAND  &mkp MB1  &lt 2 SPACE  &hm_layer 3 0      &kp BACKSPACE  &lt 1 ENTER                                  &kp DEL
             >;
 
@@ -242,10 +242,10 @@
 
         MOUSE {
             bindings = <
-&to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R  &to_layer_0 T                            &to_layer_0 Y  &to_layer_0 U      &lt 5 I            &to_layer_0 O      &lt 5 P
-&to_layer_0 A  &to_layer_0 S  &to_layer_0 D  &to_layer_0 F  &to_layer_0 G  &trans         &trans     &to_layer_0 H  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &trans
-&to_layer_0 Z  &to_layer_0 X  &to_layer_0 C  &to_layer_0 V  &to_layer_0 B  &kp LC(A)      &kp LC(C)  &to_layer_0 N  &to_layer_0 M      &trans             &trans             &trans
-&trans         &trans         &trans         &trans         &trans         &trans         &trans     &trans                                                                  &trans
+&kp LG(Q)  &kp LG(W)  &to_layer_0 E  &kp LG(R)  &to_layer_0 T                            &to_layer_0 Y  &to_layer_0 U      &lt 5 I            &to_layer_0 O      &lt 5 P
+&kp LG(A)  &kp LG(S)  &kp LG(D)      &kp LG(F)  &kp LG(G)      &trans         &trans     &to_layer_0 H  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &trans
+&kp LG(Z)  &kp LG(X)  &kp LG(C)      &kp LG(V)  &to_layer_0 B  &kp LC(A)      &kp LC(C)  &to_layer_0 N  &to_layer_0 M      &trans             &trans             &trans
+&trans     &trans     &trans         &trans     &trans         &trans         &trans     &trans                                                                  &trans
             >;
         };
 
