@@ -257,7 +257,7 @@
             bindings = <
 &kp LG(Q)  &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)                                    &to_layer_0 Y  &to_layer_0 U      &lt 5 I            &to_layer_0 O      &lt 5 P
 &kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)        &trans           &trans     &to_layer_0 H  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &trans
-&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(LS(TAB))  &kp LC(TAB)      &kp LC(C)  &to_layer_0 N  &to_layer_0 M      &trans             &trans             &trans
+&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LC(TAB))  &kp LC(TAB)      &kp LC(C)  &to_layer_0 N  &to_layer_0 M      &trans             &trans             &trans
 &trans     &trans     &trans     &trans     &trans           &trans           &trans     &trans                                                                  &trans
             >;
 
