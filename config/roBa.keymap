@@ -199,12 +199,15 @@
         tab_scrl: tab_scroll_behavior {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
+
             // 左回し(上)で前へ、右回し(下)で次へ
+
             bindings = <&kp LC(LS(TAB))>, <&kp LC(TAB)>;
+
             // トラックボールの回転が速い場合はtap-msを調整
+
             tap-ms = <20>;
         };
-
     };
 
     keymap {
@@ -252,10 +255,10 @@
 
         MOUSE {
             bindings = <
-&kp LG(Q)  &kp LG(W)  &to_layer_0 E  &kp LG(R)  &to_layer_0 T                            &to_layer_0 Y  &to_layer_0 U      &lt 5 I            &to_layer_0 O      &lt 5 P
-&kp LG(A)  &kp LG(S)  &kp LG(D)      &kp LG(F)  &kp LG(G)      &trans         &trans     &to_layer_0 H  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &trans
-&kp LG(Z)  &kp LG(X)  &kp LG(C)      &kp LG(V)  &to_layer_0 B  &kp LC(A)      &kp LC(C)  &to_layer_0 N  &to_layer_0 M      &trans             &trans             &trans
-&trans     &trans     &trans         &trans     &trans         &trans         &trans     &trans                                                                  &trans
+&kp LG(Q)  &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)                                    &to_layer_0 Y  &to_layer_0 U      &lt 5 I            &to_layer_0 O      &lt 5 P
+&kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)        &trans           &trans     &to_layer_0 H  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &trans
+&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(LS(TAB))  &kp LC(TAB)      &kp LC(C)  &to_layer_0 N  &to_layer_0 M      &trans             &trans             &trans
+&trans     &trans     &trans     &trans     &trans           &trans           &trans     &trans                                                                  &trans
             >;
 
             sensor-bindings = <&tab_scrl>;
