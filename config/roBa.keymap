@@ -195,6 +195,16 @@
 
             // 1タップでマクロ、長押しでレイヤー3
         };
+
+        tab_scrl: tab_scroll_behavior {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            // 左回し(上)で前へ、右回し(下)で次へ
+            bindings = <&kp LC(LS(TAB))>, <&kp LC(TAB)>;
+            // トラックボールの回転が速い場合はtap-msを調整
+            tap-ms = <20>;
+        };
+
     };
 
     keymap {
@@ -247,6 +257,8 @@
 &kp LG(Z)  &kp LG(X)  &kp LG(C)      &kp LG(V)  &to_layer_0 B  &kp LC(A)      &kp LC(C)  &to_layer_0 N  &to_layer_0 M      &trans             &trans             &trans
 &trans     &trans     &trans         &trans     &trans         &trans         &trans     &trans                                                                  &trans
             >;
+
+            sensor-bindings = <&tab_scrl>;
         };
 
         SCROLL {
