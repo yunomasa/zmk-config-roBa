@@ -56,6 +56,11 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <23 24>;
+        };
     };
 
     macros {
