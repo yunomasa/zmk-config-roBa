@@ -204,7 +204,7 @@
         tap_lang: tap_lang {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <800>;
             bindings = <&kp LANG2>, <&kp LANG1>;
         };
 
