@@ -206,7 +206,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>; // 連打を判定する時間（ミリ秒）
-            bindings = <&kp LANG2>, <&kp LANG1>; // 1回目でLANG2、2回目でLANG1
+            bindings = <&hp_layer_lang 3 0>, <&kp LANG1>; // 1回目でLANG2、2回目でLANG1
         };
 
         // ② ホールドとタップ（上記Tap Dance）を組み合わせる「Hold-Tap」の定義
@@ -215,7 +215,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>; // ホールドと判定する時間（ミリ秒）
-            bindings = <&mo>, <&td_lang>; // ホールドでレイヤー、タップで①のTap Danceを呼び出す
+            bindings = <&mo>, <&kp LANG2>; // ホールドでレイヤー、タップで①のTap Danceを呼び出す
         };
 
         tab_scrl: tab_scroll_behavior {
@@ -240,7 +240,7 @@
 &kp Q             &kp W             &lt 5 E                 &kp R     &kp T                                          &kp Y        &kp U  &lt 5 I    &kp O         &kp P
 &lt 1 A           &kp S             &kp D                   &kp F     &kp G        &kp LS(LG(S))      &lt 2 MINUS    &kp H        &kp J  &kp K      &kp L         &lt 3 SEMICOLON
 &mt LEFT_SHIFT Z  &lt 4 X           &kp C                   &kp V     &kp B        &lt 6 LANG2        &lt 4 LANG1    &kp N        &kp M  &kp COMMA  &lt 6 PERIOD  &mt RIGHT_SHIFT SLASH
-&mt LCTRL ESC     &mt LEFT_ALT TAB  &mt LEFT_COMMAND SPACE  &mkp MB1  &lt 2 SPACE  &hp_layer_lang 3 0 &kp BACKSPACE  &lt 1 ENTER                                  &kp DEL
+&mt LCTRL ESC     &mt LEFT_ALT TAB  &mt LEFT_COMMAND SPACE  &mkp MB1  &lt 2 SPACE  &td_lang           &kp BACKSPACE  &lt 1 ENTER                                  &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
