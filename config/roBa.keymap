@@ -201,7 +201,7 @@
             // 1タップでマクロ、長押しでレイヤー3
         };
 
-        // ① 1回タップと2回タップを判別する「Tap Dance」の定義
+        // 1. 1回タップと2回タップを判別する「Tap Dance」の定義
         td_lang: tap_dance_lang {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -209,13 +209,47 @@
             bindings = <&kp LANG2>, <&kp LANG1>; // 1回目でLANG2、2回目でLANG1
         };
 
-        // ② ホールドとタップ（上記Tap Dance）を組み合わせる「Hold-Tap」の定義
+        // タップ回数による分岐（1回でZ、2回でCapsLock）の設定
+        td_z_caps: td_z_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;     // 2回目のタップを待つ猶予時間（ミリ秒）
+            bindings = <&kp Z>, <&kp CAPS>;
+        };
+
+        // タップ回数による分岐（1回でSLASH、2回でCapsLock）の設定
+        td_sl_caps: td_sl_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;     // 2回目のタップを待つ猶予時間（ミリ秒）
+            bindings = <&kp SLASH>, <&kp CAPS>;
+        };
+
+        // 2. ホールドとタップ（上記Tap Dance）を組み合わせる「Hold-Tap」の定義
         hp_layer_lang: hold_tap_layer_lang {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>; // ホールドと判定する時間（ミリ秒）
             bindings = <&mo>, <&td_lang>; // ホールドでレイヤー、タップで①のTap Danceを呼び出す
+        };
+
+        // ホールドでShift、タップでTap Dance（1回でZ、2回でCapsLock）を実行する設定
+        hp_z_shft_caps: z_shft_caps {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;     // ホールド判定になるまでの時間（ミリ秒）
+            bindings = <&kp>, <&td_z_caps>;
+        };
+
+        // ホールドでShift、タップでTap Dance（1回でSLASH、2回でCapsLock）を実行する設定
+        hp_sl_shft_caps: sl_shft_caps {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;     // ホールド判定になるまでの時間（ミリ秒）
+            bindings = <&kp>, <&td_sl_caps>;
         };
 
         tab_scrl: tab_scroll_behavior {
@@ -237,10 +271,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W             &lt 5 E                 &kp R     &kp T                                          &kp Y        &kp U  &lt 5 I    &kp O         &kp P
-&lt 1 A           &kp S             &kp D                   &kp F     &kp G        &kp LS(LG(S))      &lt 2 MINUS    &kp H        &kp J  &kp K      &kp L         &lt 3 SEMICOLON
-&mt LEFT_SHIFT Z  &lt 4 X           &kp C                   &kp V     &kp B        &lt 6 LANG2        &lt 4 LANG1    &kp N        &kp M  &kp COMMA  &lt 6 PERIOD  &mt RIGHT_SHIFT SLASH
-&mt LCTRL ESC     &mt LEFT_ALT TAB  &mt LEFT_COMMAND SPACE  &mkp MB1  &lt 2 SPACE  &hp_layer_lang 3 0 &kp BACKSPACE  &lt 1 ENTER                                  &kp DEL
+&kp Q                  &kp W             &lt 5 E                 &kp R     &kp T                                          &kp Y        &kp U  &lt 5 I    &kp O         &kp P
+&lt 1 A                &kp S             &kp D                   &kp F     &kp G        &kp LS(LG(S))      &lt 2 MINUS    &kp H        &kp J  &kp K      &kp L         &lt 3 SEMICOLON
+&hp_z_shft_caps LSHIFT &lt 4 X           &kp C                   &kp V     &kp B        &lt 6 LANG2        &lt 4 LANG1    &kp N        &kp M  &kp COMMA  &lt 6 PERIOD  &hp_sl_shft_caps RSHIFT
+&mt LCTRL ESC          &mt LEFT_ALT TAB  &mt LEFT_COMMAND SPACE  &mkp MB1  &lt 2 SPACE  &hp_layer_lang 3 0 &kp BACKSPACE  &lt 1 ENTER                                  &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
