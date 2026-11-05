@@ -213,16 +213,16 @@
         td_z_caps: td_z_caps {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;     // 2回目のタップを待つ猶予時間（ミリ秒）
-            bindings = <&kp Z>, <&kp CAPS>;
+            tapping-term-ms = <400>;     // 2回目のタップを待つ猶予時間（ミリ秒）
+            bindings = <&kp Z>, <&kp CAPSLOCK>;
         };
 
         // タップ回数による分岐（1回でSLASH、2回でCapsLock）の設定
         td_sl_caps: td_sl_caps {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;     // 2回目のタップを待つ猶予時間（ミリ秒）
-            bindings = <&kp SLASH>, <&kp CAPS>;
+            tapping-term-ms = <400>;     // 2回目のタップを待つ猶予時間（ミリ秒）
+            bindings = <&kp SLASH>, <&kp CAPSLOCK>;
         };
 
         // 2. ホールドとタップ（上記Tap Dance）を組み合わせる「Hold-Tap」の定義
