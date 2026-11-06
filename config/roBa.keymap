@@ -42,16 +42,6 @@
             key-positions = <12 13>;
         };
 
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
         eq {
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
@@ -65,6 +55,26 @@
         capslock {
             bindings = <&caps_word>;
             key-positions = <22 33>;
+        };
+
+        up_arrow {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <6 7>;
+        };
+
+        down_arrow {
+            bindings = <&kp DOWN_ARROW>;
+            key-positions = <18 19>;
+        };
+
+        left_arrow {
+            bindings = <&kp LEFT_ARROW>;
+            key-positions = <17 18>;
+        };
+
+        right_arrow {
+            bindings = <&kp RIGHT_ARROW>;
+            key-positions = <19 20>;
         };
     };
 
@@ -213,7 +223,8 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>; // 連打を判定する時間（ミリ秒）
             bindings = <&kp LANG2>, <&kp LANG1>;
- // 1回目でLANG2、2回目でLANG1
+
+            // 1回目でLANG2、2回目でLANG1
         };
 
         // タップ回数による分岐（1回でZ、2回でCapsLock）の設定
@@ -242,7 +253,8 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>; // ホールドと判定する時間（ミリ秒）
             bindings = <&mo>, <&td_lang>;
- // ホールドでレイヤー、タップで①のTap Danceを呼び出す
+
+            // ホールドでレイヤー、タップで①のTap Danceを呼び出す
         };
 
         // ホールドでShift、タップでTap Dance（1回でZ、2回でCapsLock）を実行する設定
