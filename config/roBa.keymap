@@ -76,6 +76,16 @@
             bindings = <&kp RIGHT_ARROW>;
             key-positions = <19 20>;
         };
+
+        next_tab {
+            bindings = <&kp RC(TAB)>;
+            key-positions = <32 31>;
+        };
+
+        prev_tab {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <30 29>;
+        };
     };
 
     macros {
