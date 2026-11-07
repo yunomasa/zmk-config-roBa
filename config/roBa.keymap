@@ -221,7 +221,7 @@
         td_lang: tap_dance_lang {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>; // 連打を判定する時間（ミリ秒）
+            tapping-term-ms = <400>; // 連打を判定する時間（ミリ秒）
             bindings = <&kp LANG2>, <&kp LANG1>;
 
             // 1回目でLANG2、2回目でLANG1
