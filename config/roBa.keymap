@@ -194,8 +194,8 @@
             #binding-cells = <2>;
             bindings
                 = <&kp LANG1>      // まず確実に日本語入力（かな）にする
-                , <&kp>            // カッコを開く
-                , <&kp>            // カッコを閉じる
+                , <&kp LPAR>       // カッコを開く
+                , <&kp RPAR>       // カッコを閉じる
                 , <&kp RC(M)>
                 , <&kp LEFT>
                 ;
@@ -207,13 +207,14 @@
             #binding-cells = <2>;
             bindings
                 = <&kp LANG2>      // まず確実に英数入力にする
-                , <&kp>            // カッコを開く
-                , <&kp>            // カッコを閉じる
+                , <&kp LPAR>       // カッコを開く
+                , <&kp RPAR>       // カッコを閉じる
               //, <&kp RC(M)>
                 , <&kp LEFT>
                 ;
         };
 
+        // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_braces_lg1: macro_braces_lang1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -226,6 +227,7 @@
                 ;
         };
 
+        // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_braces_lg2: macro_braces_lang2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -238,6 +240,7 @@
                 ;
         };
 
+        // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_brackts_lg1: macro_brackts_lang1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -250,6 +253,7 @@
                 ;
         };
 
+        // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_brackts_lg2: macro_brackts_lang2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -391,10 +395,10 @@
 
         SYMBOLS {
             bindings = <
-&kp ASTRK  &kp AMPS  &kp MINUS  &kp EQUAL  &kp LT                                  &mc_parens_lg1 LPAR RPAR &mc_parens_lg2 LBKT RBKT &kp CARET      &kp TILDE  &kp BSLH
-&kp SLASH  &kp DLLR  &kp PRCNT  &kp GRAVE  &kp GT      &trans      &kp UNDERSCORE  &kp LBRC        &kp RBRC  &kp SEMICOLON  &kp SQT    &kp PIPE
-&trans     &kp EXCL  &kp HASH   &kp AT     &kp PERIOD  &trans      &trans          &kp LBKT        &kp RBKT  &kp COLON      &kp DQT    &trans
-&trans     &trans    &trans     &trans     &trans      &trans      &trans          &trans                                              &trans
+&kp ASTRK  &kp AMPS  &kp MINUS  &kp EQUAL  &kp LT                                  &mc_parens_lg1  &mc_parens_lg2 &kp CARET      &kp TILDE  &kp BSLH
+&kp SLASH  &kp DLLR  &kp PRCNT  &kp GRAVE  &kp GT      &trans      &kp UNDERSCORE  &kp LBRC        &kp RBRC       &kp SEMICOLON  &kp SQT    &kp PIPE
+&trans     &kp EXCL  &kp HASH   &kp AT     &kp PERIOD  &trans      &trans          &kp LBKT        &kp RBKT       &kp COLON      &kp DQT    &trans
+&trans     &trans    &trans     &trans     &trans      &trans      &trans          &trans                                                   &trans
             >;
         };
 
