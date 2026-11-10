@@ -397,7 +397,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
-            bindings = <&tap_two LANG1 LPAR>, <&tap_two LANG2 RPAR>, <&mc_parens_lg1>;
+            bindings = <&tap_two LANG1 LPAR>, <&tap_two LANG1 RPAR>, <&mc_parens_lg1>;
         };
 
         // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
@@ -405,7 +405,39 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
-            bindings = <&kp LPAR>, <&kp RPAR>, <&mc_parens_lg2>;
+            bindings = <&tap_two LANG2 LPAR>, <&tap_two LANG2 RPAR>, <&mc_parens_lg2>;
+        };
+
+        // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
+        td_braces_lg1: td_braces_lang1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
+            bindings = <&tap_two LANG1 LBRC>, <&tap_two LANG1 RBRC>, <&mc_braces_lg1>;
+        };
+
+        // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
+        td_braces_lg2: td_braces_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
+            bindings = <&tap_two LANG2 LBRC>, <&tap_two LANG2 RBRC>, <&mc_braces_lg2>;
+        };
+
+        // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
+        td_brackts_lg1: td_brackts_lang1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
+            bindings = <&tap_two LANG1 LBKT>, <&tap_two LANG1 RBKT>, <&mc_brackts_lg1>;
+        };
+
+        // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
+        td_brackts_lg2: td_brackts_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
+            bindings = <&tap_two LANG2 LBKT>, <&tap_two LANG2 RBKT>, <&mc_brackts_lg2>;
         };
     };
 
@@ -425,10 +457,10 @@
 
         SYMBOLS {
             bindings = <
-&kp ASTRK  &kp AMPS  &kp MINUS  &kp EQUAL  &kp LT                                  &td_parens_lg1  &td_parens_lg2 &kp CARET      &kp TILDE  &kp BSLH
-&kp SLASH  &kp DLLR  &kp PRCNT  &kp GRAVE  &kp GT      &trans      &kp UNDERSCORE  &kp LBRC        &kp RBRC       &kp SEMICOLON  &kp SQT    &kp PIPE
-&trans     &kp EXCL  &kp HASH   &kp AT     &kp PERIOD  &trans      &trans          &kp LBKT        &kp RBKT       &kp COLON      &kp DQT    &trans
-&trans     &trans    &trans     &trans     &trans      &trans      &trans          &trans                                                   &trans
+&kp ASTRK  &kp AMPS  &kp MINUS  &kp EQUAL  &kp LT                                  &td_parens_lg1  &td_parens_lg2  &kp CARET      &kp TILDE  &kp BSLH
+&kp SLASH  &kp DLLR  &kp PRCNT  &kp GRAVE  &kp GT      &trans      &kp UNDERSCORE  &td_braces_lg1  &td_braces_lg2  &kp SEMICOLON  &kp SQT    &kp PIPE
+&trans     &kp EXCL  &kp HASH   &kp AT     &kp PERIOD  &trans      &trans          &td_brackts_lg1 &td_brackts_lg2 &kp COLON      &kp DQT    &trans
+&trans     &trans    &trans     &trans     &trans      &trans      &trans          &trans                                                    &trans
             >;
         };
 
