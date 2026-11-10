@@ -265,6 +265,20 @@
                 , <&kp LEFT>
                 ;
         };
+
+        // 2つの引数を順番に入力するマクロ
+        tap_two: tap_two {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>; // 引数を2つ受け取る設定
+            tap-ms = <30>;        // キーを押している時間
+            wait-ms = <30>;       // キー入力間の待ち時間
+            bindings
+                // 1つ目の引数（パラメータ1）を &kp に渡して入力
+                = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>
+                // 2つ目の引数（パラメータ2）を &kp に渡して入力
+                , <&macro_param_2to1 &kp MACRO_PLACEHOLDER>
+                ;
+        };
     };
 
     behaviors {
@@ -383,7 +397,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
-            bindings = <&kp LPAR>, <&kp RPAR>, <&mc_parens_lg1>;
+            bindings = <&tap_two LANG1 LPAR>, <&tap_two LANG2 RPAR>, <&mc_parens_lg1>;
         };
 
         // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
