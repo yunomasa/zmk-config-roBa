@@ -188,6 +188,19 @@
             label = "CTRL_SPACE";
         };
 
+        // カッコを開いて閉じて、カーソルを中に戻すマクロ
+        mc_parenthes: macro_parenthes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <4>;
+            bindings
+                = <&kp>        // LANG1 or LANG2
+                , <&kp>        // カッコを開く
+                , <&kp>        // カッコを閉じる
+                , <&kp>        // 日本語入力のときは変換確定
+                , <&kp LEFT>   // カーソルを中に移動
+                ;
+        };
+
         mc_parens_lg1: macro_parens_lang1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -195,7 +208,7 @@
                 = <&kp LANG1>        // まず確実に日本語入力（かな）にする
                 , <&kp LPAR>
                 , <&kp RPAR>
-              //, <&kp RC(M)>
+                , <&kp RC(M)>
                 , <&kp LEFT>
                 ;
         };
@@ -212,7 +225,7 @@
                 ;
         };
 
-        mc_brackts_lg1: macro_brackts_lang1 {
+        mc_braces_lg1: macro_braces_lang1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -224,13 +237,37 @@
                 ;
         };
 
-        mc_brackts_lg2: macro_brackts_lang2 {
+        mc_braces_lg2: macro_braces_lang2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&kp LANG2>        // まず確実に英数入力にする
                 , <&kp LBRC>
                 , <&kp RBRC>
+              //, <&kp RC(M)>
+                , <&kp LEFT>
+                ;
+        };
+
+        mc_brackts_lg1: macro_brackts_lang1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LANG1>        // まず確実に日本語入力（かな）にする
+                , <&kp LBKT>
+                , <&kp RBKT>
+                , <&kp RC(M)>
+                , <&kp LEFT>
+                ;
+        };
+
+        mc_brackts_lg2: macro_brackts_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LANG2>        // まず確実に英数入力にする
+                , <&kp LBKT>
+                , <&kp RBKT>
               //, <&kp RC(M)>
                 , <&kp LEFT>
                 ;
@@ -365,7 +402,7 @@
 
         SYMBOLS {
             bindings = <
-&kp ASTRK  &kp AMPS  &kp MINUS  &kp EQUAL  &kp LT                                  &mc_parens_lg1  &kp RPAR  &kp CARET      &kp TILDE  &kp BSLH
+&kp ASTRK  &kp AMPS  &kp MINUS  &kp EQUAL  &kp LT                                  &mc_parenthes LANG2 LPAR RPAR RC(M) &mc_parenthes LANG2 LPAR RPAR 0 &kp CARET      &kp TILDE  &kp BSLH
 &kp SLASH  &kp DLLR  &kp PRCNT  &kp GRAVE  &kp GT      &trans      &kp UNDERSCORE  &kp LBRC        &kp RBRC  &kp SEMICOLON  &kp SQT    &kp PIPE
 &trans     &kp EXCL  &kp HASH   &kp AT     &kp PERIOD  &trans      &trans          &kp LBKT        &kp RBKT  &kp COLON      &kp DQT    &trans
 &trans     &trans    &trans     &trans     &trans      &trans      &trans          &trans                                              &trans
