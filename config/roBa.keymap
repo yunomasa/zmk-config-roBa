@@ -188,14 +188,50 @@
             label = "CTRL_SPACE";
         };
 
-        mc_parens_lg1: macro_parens {
+        mc_parens_lg1: macro_parens_lang1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&kp LANG1>        // まず確実に日本語入力（かな）にする
                 , <&kp LPAR>
                 , <&kp RPAR>
+              //, <&kp RC(M)>
+                , <&kp LEFT>
+                ;
+        };
+
+        mc_parens_lg2: macro_parens_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LANG2>        // まず確実に英数入力にする
+                , <&kp LPAR>
+                , <&kp RPAR>
+              //, <&kp RC(M)>
+                , <&kp LEFT>
+                ;
+        };
+
+        mc_brackts_lg1: macro_brackts_lang1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LANG1>        // まず確実に日本語入力（かな）にする
+                , <&kp LBRC>
+                , <&kp RBRC>
                 , <&kp RC(M)>
+                , <&kp LEFT>
+                ;
+        };
+
+        mc_brackts_lg2: macro_brackts_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LANG2>        // まず確実に英数入力にする
+                , <&kp LBRC>
+                , <&kp RBRC>
+              //, <&kp RC(M)>
                 , <&kp LEFT>
                 ;
         };
