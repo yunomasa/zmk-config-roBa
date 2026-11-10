@@ -189,7 +189,7 @@
         };
 
         mc_parens_lg1: macro_parens {
-            compatible = "zmk,macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&kp LANG1>        // まず確実に日本語入力（かな）にする
