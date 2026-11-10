@@ -190,8 +190,8 @@
 
         // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_parens_lg1: macro_parens_lang1 {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&kp LANG1>      // まず確実に日本語入力（かな）にする
                 , <&kp LPAR>       // カッコを開く
@@ -203,8 +203,8 @@
 
         // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_parens_lg2: macro_parens_lang2 {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
                 = <&kp LANG2>      // まず確実に英数入力にする
                 , <&kp LPAR>       // カッコを開く
