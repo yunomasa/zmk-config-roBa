@@ -200,7 +200,7 @@
                 , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>  // 2文字目（第1引数）
                 , <&macro_param_2to1 &kp MACRO_PLACEHOLDER>  // 3文字目（第2引数）
                 , <&kp RC(M)>                                // 入力した文字を確定させる
-                , <&kp LEFT>                                　// カーソルを入力した2文字の真ん中に戻す
+                , <&kp LEFT>                                 // カーソルを入力した2文字の真ん中に戻す
                 ;
         };
 
@@ -216,7 +216,7 @@
                 , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>  // 2文字目（第1引数）
                 , <&macro_param_2to1 &kp MACRO_PLACEHOLDER>  // 3文字目（第2引数）
               //, <&kp RC(M)>                                // 入力した文字を確定させる
-                , <&kp LEFT>                                　// カーソルを入力した2文字の真ん中に戻す
+                , <&kp LEFT>                                 // カーソルを入力した2文字の真ん中に戻す
                 ;
         };
 
