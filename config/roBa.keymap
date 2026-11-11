@@ -192,7 +192,7 @@
         // カッコの文字（ (or{or[ ）は引数とする
         mc_brackets_lg1: macro_brackets_lang1 {
             compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <4>;
+            #binding-cells = <2>;
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
@@ -208,7 +208,7 @@
         // カッコの文字（ (or{or[ ）は引数とする
         mc_brackets_lg2: macro_brackets_lang2 {
             compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <4>;
+            #binding-cells = <2>;
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
@@ -219,6 +219,7 @@
                 , <&kp LEFT>                                　// カーソルを入力した2文字の真ん中に戻す
                 ;
         };
+
         // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_parens_lg1: macro_parens_lang1 {
             compatible = "zmk,behavior-macro";
