@@ -220,6 +220,7 @@
                 ;
         };
 
+/*
         // カッコを開いて閉じて、カーソルを中に戻すマクロ
         mc_parens_lg1: macro_parens_lang1 {
             compatible = "zmk,behavior-macro";
@@ -297,6 +298,7 @@
                 , <&kp LEFT>
                 ;
         };
+*/
 
         // 2つの引数を順番に入力するマクロ
         tap_two: tap_two {
@@ -445,7 +447,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
-            bindings = <&tap_two LANG1 LBRC>, <&tap_two LANG1 RBRC>, <&mc_braces_lg1>;
+            bindings = <&tap_two LANG1 LBRC>, <&tap_two LANG1 RBRC>, <&mc_brackets_lg1 LBRC RBRC>;
         };
 
         // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
@@ -453,7 +455,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
-            bindings = <&tap_two LANG2 LBRC>, <&tap_two LANG2 RBRC>, <&mc_braces_lg2>;
+            bindings = <&tap_two LANG2 LBRC>, <&tap_two LANG2 RBRC>, <&mc_brackets_lg2 LBRC RBRC>;
         };
 
         // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
@@ -461,7 +463,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
-            bindings = <&tap_two LANG1 LBKT>, <&tap_two LANG1 RBKT>, <&mc_brackts_lg1>;
+            bindings = <&tap_two LANG1 LBKT>, <&tap_two LANG1 RBKT>, <&mc_brackets_lg1 LBKT RBKT>;
         };
 
         // 1回タップ時に左カッコ、2回タップ時に右カッコ、3回タップ時にカッコを開いて閉じてカーソルを中に戻すマクロ
@@ -469,7 +471,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>; // タップを判定する制限時間（ミリ秒）
-            bindings = <&tap_two LANG2 LBKT>, <&tap_two LANG2 RBKT>, <&mc_brackts_lg2>;
+            bindings = <&tap_two LANG2 LBKT>, <&tap_two LANG2 RBKT>, <&mc_brackets_lg2 LBKT RBKT>;
         };
     };
 
